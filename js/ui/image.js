@@ -1,21 +1,21 @@
+/** ImageUI -  создаёт и добавляет UI-шаблоны картинки*/
 class ImageUI {
     constructor() {
         this._imageContainer = document.querySelector(".images-wrap .row");
     }
 
+    // Добавляет шаблон картинки на страницу
     addImage(image) {
         const template = ImageUI._createImageTemplate(image);
         this._imageContainer.insertAdjacentHTML("afterbegin", template);
     }
 
-    removeImage(id) {
-
-    }
-
+    // Очищает контейнер с картинками
     clearContainer() {
         this._imageContainer.innerHTML = "";
     }
 
+    // Шаблон картинки
     static _createImageTemplate({ url, views, likes, _id }) {
         return `
         <div class="col-4 col">

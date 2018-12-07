@@ -1,4 +1,7 @@
+/** UserService - класс для работы с сервером */
 class UserService {
+
+    // Получает данные о залогиненом пользователе с сервера
     getInfo() {
         return new Promise((resolve, reject) => {
             // Get token 
@@ -19,6 +22,7 @@ class UserService {
         })
     }
 
+    // Загружает на сервер обложку пользователя
     uploadCover(file) {
         return new Promise((resolve, reject) => {
             const formData = new FormData();
@@ -42,6 +46,7 @@ class UserService {
         });
     }
 
+    // Загружает на сервер картинку пользователя
     uploadImg(photo) {
         return new Promise((resolve, reject) => {
             const formData = new FormData();
@@ -63,6 +68,7 @@ class UserService {
         });
     }
 
+    // Удаляет с сервера картинку пользователя
     deleteImg(imgId, imgSrc) {
         return new Promise((resolve, reject) => {
             const id = localStorage.getItem("social_user_id");
